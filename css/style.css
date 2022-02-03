@@ -55,9 +55,9 @@ button {
     font-size: 1.6rem;    
     color: rgb(100, 100, 100);    
 }
-/*button:hover{
-    border: 1px solid rgb(140,140, 140);
-}*/
+button:hover{
+    filter: brightness(90%)
+}
 .equal {
     width: 11.6rem;
     border-radius: 4rem;
