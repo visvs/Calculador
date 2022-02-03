@@ -10,9 +10,9 @@
 <body>
     <div class="container">
         <div class="calculador">
-            <input type="text" placeholder="0">
-            <button onclick="clear()">AC</button>
-            <button onclick="clear()">DEL</button>
+            <input type="text" id="output-screen" placeholder="0">
+            <button onclick="clear()">Cl</button>
+            <button onclick="del()">DEL</button>
             <button onclick="display('%')">%</button>
             <button onclick="display('/')">/</button>
             <button onclick="display('7')">7</button>
@@ -29,8 +29,28 @@
             <button onclick="display('+')">+</button> 
             <button onclick="display('.')">.</button> 
             <button onclick="display('0')">0</button>         
-            <button onclick="calcular()">=</button>  
+            <button class="equal" onclick="calcular()">=</button>  
         </div>               
     </div>
+    <script>
+        let outputScreen = document.getElementById('output-screen');
+
+        function display(elem){
+            outputScreen.value += elem;
+        }
+        function calcular(){
+            try{
+                outputScreen.value = eval(outputScreen.value);                
+            }catch{
+                alert("Invalid input")
+            }
+        }
+        function clear(){
+            outputScreen.value = "";
+        }
+        function del(){
+            outputScreen.value = outputScreen.value.slice(0,-1)
+        }
+    </script>
 </body>
 </html>
